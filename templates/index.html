@@ -1,4 +1,21 @@
-{% extends "layout.html" %}
-{% block body %}
-<h1>hello, world!</h1>
+{% extends "layout.html" %} {% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Send conference info</h1>
+      <p>Send your conference call participants the conference dial-in and passcode to join the meeting!</p>
+      <p>This micro-service was developed with Flask, ES5, and Twilio.</p>
+      <form id="service_form">
+        <div class="form-group">
+          <input type="tel" class="form-control" id="to_number" placeholder="Who to send? ie. +12138675309 (yes, from the song)">
+          <input type="tel" class="form-control" id="conf_num" placeholder="What's the conference number? ie. +18881234567">
+          <input type="number" class="form-control" id="passcode_1" placeholder="First passcode.. No need to input '#'">
+          <input type="number" class="form-control" id="passcode_2" placeholder="Second passcode.. No need to input '#'">
+        </div>
+        <button type="submit" class="btn btn-primary" id="service_submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 {% endblock %}
